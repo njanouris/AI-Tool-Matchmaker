@@ -18,7 +18,7 @@
 
 /*Helps to contain the main part/title of the website */
 .top-text {
-    border: 5px solid var(--cream-color);
+    border: 5px dashed #8B5E3C;
     border-radius: 10px;
     background:
         linear-gradient(rgba(11, 19, 43, 0.6), rgba(11, 19, 43, 0.6)),
@@ -32,6 +32,10 @@
     margin-bottom: 80px;
 }
 
+.top-text h1{
+    text-decoration: underline;
+    text-decoration-offset: 2px;
+}
 /*Navigation Bar that is at the top of the website*/
 .navbar {
     position: fixed;
@@ -48,7 +52,7 @@
         url("https://images.unsplash.com/photo-1570454618940-165d5cc494f3?w=1600&q=60") var(--border-color-backup);
     background-size: cover;
     background-position: center;
-    border-bottom: 2px solid var(--cream-color);
+    border-bottom: 5px solid var(--cream-color);
 }
 
 /*AIZoo name on the far left of the nav bar*/
@@ -76,8 +80,4 @@
 .navbar a:hover {
     background-color: var(--accent-color-1);
     color: var(--text-color-1);
-}
-
-h1 {
-    text-decoration: underline;
 }
