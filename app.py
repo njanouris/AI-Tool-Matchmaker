@@ -43,3 +43,16 @@ budget = st.selectbox(
     ]
 )
 st.write("You selected:", budget)
+st.write("You selected:", budget)
+#Number of employees  
+st.write("How many employees do you have?")
+num_employees = st.slider("Select the number of employees:", 1, 100, 5)
+st.write("You selected:", num_employees)
+
+st.write("How comfortable are you with technology?")
+tech_comfort = st.slider("Select your technology comfort level:", 1, 10, 1)
+st.write("You selected:", tech_comfort)
+
+st.write(f"Currently looking for the best AI tools for your {business_type} based on your responses.  Please wait while we analyze your inputs and provide recommendations. ")
+
+
