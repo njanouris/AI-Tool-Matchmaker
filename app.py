@@ -3,10 +3,20 @@ import pandas as pd
 
 tools = pd.read_excel("ai_tools.xlsx")
 
-# Set up the application
-st.title("AI Tool Matchmaker")
+# Load the CSS file
+def load_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-st.write("Find the right AI tools for your small business.")
+load_css("style.css")
+
+# Set up the application
+st.markdown("""
+<div class="top-text">
+    <h1>AI Tool Matchmaker</h1>
+    <p>Find the right AI tools for your small business.</p>
+</div>
+""", unsafe_allow_html=True)
 
 # First questionnaire question
 # Ask what type of business the user operates
@@ -84,3 +94,4 @@ if st.button("Find My AI Tools"):
             st.write(f"Monthly Cost: ${tool['monthly_cost']}")
             st.write(f"Pros: {tool['pros']}")
             st.write(f"Cons: {tool['cons']}")
+            
