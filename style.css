@@ -30,6 +30,13 @@
     border-bottom: 2px solid var(--white);
 }
 
+/*AIZoo name on the far left of the nav bar*/
+.nav-logo {
+    color: var(--blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .navbar a {
     color: var(--white);
     text-decoration: none;
