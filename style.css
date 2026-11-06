@@ -1,11 +1,21 @@
 /*Global color variables*/
 :root {
-    --white: #FFFFFF;
-    --blue: #00B4D8;
-    --green: #4CAF50;
-    --black: #000000;
-    --navy: #0B132B;
-    --navy-light: #1C2541;
+    --background-color: #84B067;
+    --text-color-1: #0B132B;
+    --text-color-2: #FFFFFF;
+    --accent-color-1: #00B4D8;
+    --accent-color-2: #4CAF50;
+    --navbar-color: #1C2541;
+    --border-color: #0B132B;
+}
+
+/*Helps to contain the main part/title of the website */
+.top-text {
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 80px;
 }
 
 /*Navigation Bar that is at the top of the website*/
@@ -17,13 +27,13 @@
     align-items: center;
     padding: 10px 40px;
     margin-bottom: 100px;
-    background-color: var(--navy-light);
-    border-bottom: 2px solid var(--white);
+    background-color: var(--navbar-color);
+    border-bottom: 2px solid var(--text-color-2);
 }
 
 /*AIZoo name on the far left of the nav bar*/
 .nav-logo {
-    color: var(--blue);
+    color: var(--accent-color-1);
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -36,7 +46,7 @@
 }
 
 .navbar a {
-    color: var(--white);
+    color: var(--text-color-2);
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -44,18 +54,6 @@
 }
 
 .navbar a:hover {
-    background-color: var(--blue);
-    color: var(--black);
+    background-color: var(--accent-color-1);
+    color: var(--text-color-1);
 }
-
-/*Helps to contain the main part/title of the website */
-.top-text {
-    border: 2px solid var(--white);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 80px;
-    text-decoration: underline wavy #3d251e 2px;
-    text-underline-offset: 6px;
-}
-
