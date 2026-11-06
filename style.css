@@ -85,6 +85,14 @@
     color: var(--navbar-color);
 }
 
+/*Horizontal line between the header box and the questions*/
+.section-divider {
+    border: none;
+    height: 3px;
+    background-color: var(--accent-color-blue);
+    margin: 0 0 40px 0;
+}
+
 /*Cards that hold each question*/
 div[class*="st-key-question_card"] {
     background-color: var(--cream-color);
@@ -103,6 +111,7 @@ div[class*="st-key-question_card"] p {
 div[class*="st-key-question_card"] [data-testid="stWidgetLabel"] {
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 div[class*="st-key-question_card"] [data-testid="stWidgetLabel"] p {
