@@ -1,4 +1,7 @@
 import streamlit as st
+import pandas as pd
+
+tools = pd.read_excel("ai_tools.xlsx")
 
 # Set up the application
 st.title("AI Tool Matchmaker")
