@@ -2,6 +2,7 @@ import streamlit as st
 
 # Set up the application
 st.title("AI Tool Matchmaker")
+
 st.write("Find the right AI tools for your small business.")
 
 # First questionnaire question
@@ -42,8 +43,11 @@ budget = st.selectbox(
         "Over $1,000/month"
     ]
 )
+
 st.write("You selected:", budget)
+
 st.write("You selected:", budget)
+
 #Number of employees  
 st.write("How many employees do you have?")
 num_employees = st.slider("Select the number of employees:", 1, 100, 5)
