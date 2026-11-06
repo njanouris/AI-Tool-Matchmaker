@@ -1,6 +1,6 @@
 /*Global color variables*/
 :root {
-    --background-color: #0F1F17;
+    --background-color: #616569;
     --text-color-1: #E8F5E9;
     --text-color-2: #FFFFFF;
     --accent-color-1: #39FF88;
@@ -35,6 +35,8 @@
 .top-text h1{
     text-decoration: underline;
     text-decoration-offset: 2px;
+    color: #9c35ba;
+    
 }
 /*Navigation Bar that is at the top of the website*/
 .navbar {
