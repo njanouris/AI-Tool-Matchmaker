@@ -10,20 +10,20 @@ def load_css(file_name):
     
 load_css("style.css")
 
-# AI Tool Matchmaker header text 
-st.markdown("""
-<div class="top-text">
-    <h1>AI Tool Matchmaker</h1>
-    <p>Find the right AI tools for your small business.</p>
-</div>
-""", unsafe_allow_html=True)
-
 # Work in Progress Nav Bar (we will need three pages or we can delete this)
 st.markdown("""
 <div class="navbar">
     <a href="#">Home</a>
     <a href="#">About the Website</a>
     <a href="#">About the Creators</a>
+</div>
+""", unsafe_allow_html=True)
+
+# AI Tool Matchmaker header text 
+st.markdown("""
+<div class="top-text">
+    <h1>AI Tool Matchmaker</h1>
+    <p>Find the right AI tools for your small business.</p>
 </div>
 """, unsafe_allow_html=True)
 
