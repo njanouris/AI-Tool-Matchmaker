@@ -31,6 +31,11 @@
     margin-bottom: 80px;
 }
 
+/*This gets rid of Streamlit's own padding at the top of the website so the navbar is fixed at the top with no spacing before it*/
+header[data-testid="stHeader"] {
+    display: none;
+}
+
 /*Navigation Bar that is at the top of the website*/
 .navbar {
     width: 100vw;
@@ -42,6 +47,7 @@
     margin-bottom: 100px;
     background-color: var(--navbar-color);
     border-bottom: 2px solid var(--text-color-2);
+    position: fixed;
 }
 
 /*AIZoo name on the far left of the nav bar*/
