@@ -6,6 +6,19 @@ st.title("AI Tool Matchmaker")
 st.write("Find the right AI tools for your small business.")
 
 # First questionnaire question
+# Ask what type of business the user operates
+business_type = st.selectbox(
+    "What type of business do you operate?",
+    [
+        "Restaurant / Cafe",
+        "Retail Store",
+        "Landscaping",
+        "HVAC / Home Services",
+        "Professional Services",
+        "Other"
+    ]
+)
+
 challenge = st.selectbox(
     "What is your biggest business challenge?",
     [
@@ -19,21 +32,8 @@ challenge = st.selectbox(
 )
 
 st.write("You selected:", challenge)
-# Ask what type of business the user operates
-business_type = st.selectbox(
-    "What type of business do you operate?",
-    [
-        "Restaurant / Cafe",
-        "Retail Store",
-        "Landscaping",
-        "HVAC / Home Services",
-        "Professional Services",
-        "Other"
-    ]
-)
-st.write("You selected:", business_type)
-#Asking for the users Budget
 
+#Asking for the users Budget
 budget = st.selectbox(
     "What is your budget for AI tools?",
     [
@@ -46,7 +46,6 @@ budget = st.selectbox(
 
 st.write("You selected:", budget)
 
-st.write("You selected:", budget)
 
 #Number of employees  
 st.write("How many employees do you have?")
