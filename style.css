@@ -1,6 +1,16 @@
+/*Global color variables*/
+:root {
+    --white: #FFFFFF;
+    --blue: #00B4D8;
+    --green: #4CAF50;
+    --black: #000000;
+    --navy: #0B132B;
+    --navy-light: #1C2541;
+}
+
 /*Helps to contain the main part/title of the website */
 .top-text {
-    border: 2px solid white;
+    border: 2px solid var(--white);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -9,22 +19,28 @@
 
 /*Navigation Bar that is at the top of the website*/
 .navbar {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 15px;
+    gap: 10px;
+    padding: 10px 0;
     margin-bottom: 20px;
-    border-bottom: 2px solid white;
+    background-color: var(--navy-light);
+    border-bottom: 2px solid var(--white);
 }
 
 .navbar a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
 }
 
 .navbar a:hover {
-    color: #00B4D8;
+    background-color: var(--blue);
+    color: var(--black);
 }
 
 
