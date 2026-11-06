@@ -30,6 +30,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# Division between header and first question
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
+
 # First questionnaire question
 # Ask what type of business the user operates
 with st.container(key="question_card_business"):
