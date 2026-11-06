@@ -20,9 +20,12 @@
     border: 5px solid transparent;
     border-radius: 10px;
     background:
-        linear-gradient(var(--background-color), var(--background-color)) padding-box,
+        linear-gradient(rgba(11, 19, 43, 0.6), rgba(11, 19, 43, 0.6)) padding-box,
+        url("https://img.magnific.com/free-vector/technology-circuit-lines-diagram-futuristic_1017-29746.jpg") padding-box var(--navbar-color),
         url("https://images.unsplash.com/photo-1570454618940-165d5cc494f3?w=800&q=60") border-box var(--border-color-backup);
     background-size: cover;
+    background-position: center;
+    color: var(--text-color-2);
     padding: 20px;
     text-align: center;
     margin-bottom: 80px;
