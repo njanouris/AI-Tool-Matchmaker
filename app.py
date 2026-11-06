@@ -64,7 +64,6 @@ if st.button("Find My AI Tools"):
     )
 
 #The code below filters the tolls based on user responses and displays the results
-if st.button("Find My AI Tools"):
 
     matches = tools[
         (tools['challenge'] == challenge) &
