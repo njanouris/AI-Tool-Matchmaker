@@ -25,7 +25,8 @@ st.markdown("""
 # AI Tool Matchmaker header text 
 st.markdown("""
 <div class="top-text">
-    <h1>ViperVisionAI: AI Tool Matchmaker</h1>
+    <h1>ViperVisionAI</h1>
+    <h2>AI Tool Matchmaker</h2>
     <p>Find the right AI tools for your small business.</p>
 </div>
 """, unsafe_allow_html=True)
