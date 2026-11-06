@@ -3,18 +3,27 @@ import pandas as pd
 
 tools = pd.read_excel("ai_tools.xlsx")
 
-# Load the CSS file
+# CSS
 def load_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
+    
 load_css("style.css")
 
-# Set up the application
+# AI Tool Matchmaker header text 
 st.markdown("""
 <div class="top-text">
     <h1>AI Tool Matchmaker</h1>
     <p>Find the right AI tools for your small business.</p>
+</div>
+""", unsafe_allow_html=True)
+
+# Work in Progress Nav Bar (we will need three pages or we can delete this)
+st.markdown("""
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About the Website</a>
+    <a href="#">About the Creators</a>
 </div>
 """, unsafe_allow_html=True)
 
