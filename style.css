@@ -5,6 +5,7 @@
     --text-color-white: #FFFFFF;
     --accent-color-neon-green: #39FF88;
     --accent-color-blue: #00B4D8;
+    --accent-color-dark-blue: #003366;
     --navbar-color: #0A1410;
     --border-color: #39FF88;
     --border-color-backup: #6B4423;
@@ -30,7 +31,7 @@
     padding: 20px;
     text-align: center;
     margin-top: 60px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .top-text h1 {
@@ -118,7 +119,9 @@ div[class*="st-key-question_card"] [data-testid="stWidgetLabel"] p {
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: underline;
-    text-underline-offset: 5px;
+    text-decoration-color: var(--accent-color-dark-blue);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 7px;
 }
 
 /*Dropdown boxes in brown to match the dashed border*/
