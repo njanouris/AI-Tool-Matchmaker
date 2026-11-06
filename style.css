@@ -8,6 +8,7 @@
     --navbar-color: #0A1410;
     --border-color: #39FF88;
     --border-color-backup: #6B4423;
+    --cream-color: #F5EFE0;
 }
 
 /*Sets the background color of the whole website*/
@@ -17,33 +18,37 @@
 
 /*Helps to contain the main part/title of the website */
 .top-text {
-    border: 5px solid transparent;
+    border: 5px solid var(--cream-color);
     border-radius: 10px;
     background:
-        linear-gradient(rgba(11, 19, 43, 0.6), rgba(11, 19, 43, 0.6)) padding-box,
-        url("https://img.magnific.com/free-vector/technology-circuit-lines-diagram-futuristic_1017-29746.jpg") padding-box,
-        url("https://images.unsplash.com/photo-1570454618940-165d5cc494f3?w=800&q=60") border-box var(--border-color-backup);
+        linear-gradient(rgba(11, 19, 43, 0.6), rgba(11, 19, 43, 0.6)),
+        url("https://img.magnific.com/free-vector/technology-circuit-lines-diagram-futuristic_1017-29746.jpg") var(--navbar-color);
     background-size: cover;
     background-position: center;
     color: var(--text-color-2);
     padding: 20px;
     text-align: center;
+    margin-top: 60px;
     margin-bottom: 80px;
 }
 
-
 /*Navigation Bar that is at the top of the website*/
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    margin-left: calc(50% - 50vw);
+    z-index: 999999;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    margin-bottom: 100px;
-    background-color: var(--navbar-color);
-    border-bottom: 2px solid var(--text-color-2);
-    position: sticky;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1570454618940-165d5cc494f3?w=1600&q=60") var(--border-color-backup);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid var(--cream-color);
 }
 
 /*AIZoo name on the far left of the nav bar*/
