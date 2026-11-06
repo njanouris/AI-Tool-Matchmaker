@@ -21,6 +21,7 @@ business_type = st.selectbox(
         "Other"
     ]
 )
+st.write("You selected:", business_type)
 
 challenge = st.selectbox(
     "What is your biggest business challenge?",
