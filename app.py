@@ -31,3 +31,15 @@ business_type = st.selectbox(
     ]
 )
 st.write("You selected:", business_type)
+#Asking for the users Budget
+
+budget = st.selectbox(
+    "What is your budget for AI tools?",
+    [
+        "Under $100/month",
+        "$100-$500/month",
+        "$500-$1,000/month",
+        "Over $1,000/month"
+    ]
+)
+st.write("You selected:", budget)
