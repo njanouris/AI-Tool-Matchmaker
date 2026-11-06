@@ -14,7 +14,7 @@
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
 }
 
 /*Navigation Bar that is at the top of the website*/
@@ -25,7 +25,7 @@
     justify-content: center;
     gap: 10px;
     padding: 10px 0;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     background-color: var(--navy-light);
     border-bottom: 2px solid var(--white);
 }
