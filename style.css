@@ -43,7 +43,7 @@
     margin-bottom: 100px;
     background-color: var(--navbar-color);
     border-bottom: 2px solid var(--text-color-2);
-    position: fixed;
+    position: sticky;
 }
 
 /*AIZoo name on the far left of the nav bar*/
