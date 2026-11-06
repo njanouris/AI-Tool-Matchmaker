@@ -13,9 +13,12 @@ load_css("style.css")
 # Work in Progress Nav Bar (we will need three pages or we can delete this)
 st.markdown("""
 <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About the Website</a>
-    <a href="#">About the Creators</a>
+    <div class="nav-logo">AIZoo</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About the Website</a>
+        <a href="#">About the Creators</a>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
