@@ -63,3 +63,21 @@ if st.button("Find My AI Tools"):
         f"Please wait while we analyze your inputs and provide recommendations."
     )
 
+#The code below filters the tolls based on user responses and displays the results
+if st.button("Find My AI Tools"):
+
+    matches = tools[
+        (tools['challenge'] == challenge) &
+        (tools['business_type'] == business_type)
+    ]
+
+    st.subheader("Your AI Tool Recommendations")
+
+    if matches.empty:
+        st.warning("No matching tools found. Try another selection.")
+    else:
+        for index, tool in matches.iterrows():
+            st.write(f"### {tool['tool_name']}")
+            st.write(f"Monthly Cost: ${tool['monthly_cost']}")
+            st.write(f"Pros: {tool['pros']}")
+            st.write(f"Cons: {tool['cons']}")
