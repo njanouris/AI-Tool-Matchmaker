@@ -45,9 +45,12 @@ with st.container(key="question_card_business"):
             "HVAC / Home Services",
             "Professional Services",
             "Other"
-        ]
+        ],
+        index=None,
+        placeholder="Select your business type..."
     )
-    st.write("You selected:", business_type)
+    if business_type:
+        st.write("You selected:", business_type)
 
 with st.container(key="question_card_challenge"):
     challenge = st.selectbox(
@@ -59,9 +62,12 @@ with st.container(key="question_card_challenge"):
             "Accounting and Bookkeeping",
             "Inventory Management",
             "Administrative Tasks"
-        ]
+        ],
+        index=None,
+        placeholder="Select your biggest challenge..."
     )
-    st.write("You selected:", challenge)
+    if challenge:
+        st.write("You selected:", challenge)
 
 #Asking for the users Budget
 with st.container(key="question_card_budget"):
@@ -72,9 +78,12 @@ with st.container(key="question_card_budget"):
             "$100-$500/month",
             "$500-$1,000/month",
             "Over $1,000/month"
-        ]
+        ],
+        index=None,
+        placeholder="Select your budget..."
     )
-    st.write("You selected:", budget)
+    if budget:
+        st.write("You selected:", budget)
 
 #Number of employees
 with st.container(key="question_card_employees"):
@@ -86,6 +95,20 @@ with st.container(key="question_card_tech"):
     st.write("You selected:", tech_comfort)
 
 if st.button("Find My AI Tools"):
+
+    # Validation: make sure every dropdown has an answer
+    missing = []
+    if business_type is None:
+        missing.append("business type")
+    if challenge is None:
+        missing.append("biggest challenge")
+    if budget is None:
+        missing.append("budget")
+
+    if missing:
+        st.error("Please select your " + ", ".join(missing) + " before continuing.")
+        st.stop()
+
     st.write(
         f"Currently looking for the best AI tools for your "
         f"{business_type} business based on your responses. "
