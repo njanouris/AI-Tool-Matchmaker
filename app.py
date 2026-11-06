@@ -53,6 +53,10 @@ st.write("How comfortable are you with technology?")
 tech_comfort = st.slider("Select your technology comfort level:", 1, 10, 1)
 st.write("You selected:", tech_comfort)
 
-st.write(f"Currently looking for the best AI tools for your {business_type} based on your responses.  Please wait while we analyze your inputs and provide recommendations. ")
-
+if st.button("Find My AI Tools"):
+    st.write(
+        f"Currently looking for the best AI tools for your "
+        f"{business_type} business based on your responses. "
+        f"Please wait while we analyze your inputs and provide recommendations."
+    )
 
