@@ -27,6 +27,7 @@ st.markdown("""
 <div class="top-text">
     <h1>ViperVisionAI</h1>
     <p>Find the right AI tools for your small business.</p>
+    <p>Smarter Tools. Clearer Decisions.</p>
 </div>
 """, unsafe_allow_html=True)
 
