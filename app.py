@@ -13,7 +13,7 @@ load_css("style.css")
 # Work in Progress Nav Bar (we will need three pages or we can delete this)
 st.markdown("""
 <div class="navbar">
-    <div class="nav-logo">AIZoo</div>
+    <div class="nav-logo">ViperVisionAI</div>
     <div class="nav-links">
         <a href="#">Home</a>
         <a href="#">About the Website</a>
@@ -25,7 +25,7 @@ st.markdown("""
 # AI Tool Matchmaker header text 
 st.markdown("""
 <div class="top-text">
-    <h1>AIZoo: AI Tool Matchmaker</h1>
+    <h1>ViperVisionAI: AI Tool Matchmaker</h1>
     <p>Find the right AI tools for your small business.</p>
 </div>
 """, unsafe_allow_html=True)
