@@ -498,7 +498,6 @@ st.markdown("""
 st.markdown("""
 <div class="top-text">
     <h1>VipervisionAI</h1>
-    <hr class="title-divider">
     <p>Find the right AI tools for your small business.</p>
 </div>
 """, unsafe_allow_html=True)
