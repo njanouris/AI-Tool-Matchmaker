@@ -129,12 +129,13 @@ def load_tools(path):
         raise ValueError("Every catalog tool must have one unique name.")
     return data
 
+DESIGN_MODE = False
 try:
     tools = load_tools(DATA_FILE)
 except FileNotFoundError:
-    # DESIGN PRACTICE ONLY: run with an empty catalog when ai_tools.csv is missing.
+    # DESIGN PRACTICE ONLY: run quietly with an empty catalog when ai_tools.csv is missing.
     # Change this back to st.stop() before sharing with the team.
-    st.warning("Design mode: ai_tools.csv was not found, so the catalog is empty.")
+    DESIGN_MODE = True
     tools = pd.DataFrame(columns=REQUIRED_COLUMNS)
 except (pd.errors.ParserError, ValueError) as error:
     st.error("The tool catalog could not be loaded. Check ai_tools.csv and try again.")
@@ -145,7 +146,7 @@ newest_check = pd.to_datetime(tools["checked_date"], errors="coerce").max()
 if pd.notna(newest_check):
     PRICE_CHECK_DATE = date_label(newest_check)
 
-if len(tools) != EXPECTED_TOOL_COUNT:
+if not DESIGN_MODE and len(tools) != EXPECTED_TOOL_COUNT:
     st.warning(
         f"The catalog currently contains {len(tools)} tools. "
         f"The contest demonstration expects {EXPECTED_TOOL_COUNT}."
