@@ -544,38 +544,40 @@ with greet_col:
 # Divider between Vee's introduction and the explore section
 st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
-# Heading in its own box
-with st.container(key="explore_heading"):
-    st.subheader("What Vee can help you explore")
+# Dark background around the whole explore section
+with st.container(key="explore_section"):
+    # Heading in its own box
+    with st.container(key="explore_heading"):
+        st.subheader("What Vee can help you explore")
 
-card1, card2, card3 = st.columns(3)
-with card1:
-    with st.container(key="explore_card_customer"):
-        st.markdown("#### Customer questions")
-        st.write("Review replies and customer conversations.")
-        st.caption("Catalog examples include Google Business Profile and Podium.")
-        if st.button("Explore customer questions", key="explore_customer", use_container_width=True):
-            st.session_state["explore_job"] = "Customer Questions"
-            st.session_state["quiz_job_select"] = "Customer Questions"
-        st.metric("Real tools in the catalog", len(tools))
-with card2:
-    with st.container(key="explore_card_marketing"):
-        st.markdown("#### Marketing")
-        st.write("Email campaigns and social content.")
-        st.caption("Catalog examples include Mailchimp and Canva.")
-        if st.button("Explore marketing", key="explore_marketing", use_container_width=True):
-            st.session_state["explore_job"] = "Marketing"
-            st.session_state["quiz_job_select"] = "Marketing"
-        st.metric("Jobs covered", tools["challenge"].nunique())
-with card3:
-    with st.container(key="explore_card_bookings"):
-        st.markdown("#### Bookings and operations")
-        st.write("Online bookings, scheduling, and daily tasks.")
-        st.caption("Catalog examples include Square Appointments and Homebase.")
-        if st.button("Explore bookings", key="explore_bookings", use_container_width=True):
-            st.session_state["explore_job"] = "Bookings"
-            st.session_state["quiz_job_select"] = "Bookings"
-        st.metric("Prices checked", PRICE_CHECK_DATE)
+    card1, card2, card3 = st.columns(3)
+    with card1:
+        with st.container(key="explore_card_customer"):
+            st.markdown("#### Customer questions")
+            st.write("Review replies and customer conversations.")
+            st.caption("Catalog examples include Google Business Profile and Podium.")
+            if st.button("Explore customer questions", key="explore_customer", use_container_width=True):
+                st.session_state["explore_job"] = "Customer Questions"
+                st.session_state["quiz_job_select"] = "Customer Questions"
+            st.metric("Real tools in the catalog", len(tools))
+    with card2:
+        with st.container(key="explore_card_marketing"):
+            st.markdown("#### Marketing")
+            st.write("Email campaigns and social content.")
+            st.caption("Catalog examples include Mailchimp and Canva.")
+            if st.button("Explore marketing", key="explore_marketing", use_container_width=True):
+                st.session_state["explore_job"] = "Marketing"
+                st.session_state["quiz_job_select"] = "Marketing"
+            st.metric("Jobs covered", tools["challenge"].nunique())
+    with card3:
+        with st.container(key="explore_card_bookings"):
+            st.markdown("#### Bookings and operations")
+            st.write("Online bookings, scheduling, and daily tasks.")
+            st.caption("Catalog examples include Square Appointments and Homebase.")
+            if st.button("Explore bookings", key="explore_bookings", use_container_width=True):
+                st.session_state["explore_job"] = "Bookings"
+                st.session_state["quiz_job_select"] = "Bookings"
+            st.metric("Prices checked", PRICE_CHECK_DATE)
 
 # Recommendation questionnaire
 st.header("Find my tools")
