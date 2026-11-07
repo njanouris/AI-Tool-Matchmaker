@@ -10,6 +10,7 @@
     --accent-color-blue: #49B8D0;
     --accent-color-yellow: #D9A441;
     --card-color-gray: #53635B;
+    --tan-color: #C8A978;
     --border-color-dark-green: #1F4D2E;
     --cream-color: #F5EFE0;
     --cream-color-dark: #E6D8BC;
@@ -276,9 +277,9 @@ div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[d
     width: auto;
 }
 
-/*Dark background around the whole explore section*/
+/*Tan background around the whole explore section*/
 div[class*="st-key-explore_section"] {
-    background-color: var(--navbar-color);
+    background-color: var(--tan-color);
     border-radius: 16px;
     padding: 25px;
 }
