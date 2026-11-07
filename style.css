@@ -184,9 +184,24 @@ div[class*="st-key-vee_intro"] .stLinkButton a {
     border: 2px solid var(--text-color-white);
 }
 
-/*Hover: white background so the black text stays readable*/
+/*Hover: same as the other buttons, dark background with neon green text*/
 div[class*="st-key-vee_intro"] .stLinkButton a:hover {
-    background-color: var(--text-color-white);
+    background-color: var(--navbar-color);
+}
+
+div[class*="st-key-vee_intro"] .stLinkButton a:hover,
+div[class*="st-key-vee_intro"] .stLinkButton a:hover p {
+    color: var(--accent-color-neon-green);
+}
+
+/*5px black border around the picture of Vee*/
+div[class*="st-key-vee_image"] img {
+    border: 5px solid var(--text-color-black);
+}
+
+/*30px of space between Vee's picture and the Hi, I am Vee box*/
+div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) {
+    gap: 30px;
 }
 
 /*Snakeskin image for the nav bar background.
