@@ -131,7 +131,12 @@ def load_tools(path):
 
 try:
     tools = load_tools(DATA_FILE)
-except (FileNotFoundError, pd.errors.ParserError, ValueError) as error:
+except FileNotFoundError:
+    # DESIGN PRACTICE ONLY: run with an empty catalog when ai_tools.csv is missing.
+    # Change this back to st.stop() before sharing with the team.
+    st.warning("Design mode: ai_tools.csv was not found, so the catalog is empty.")
+    tools = pd.DataFrame(columns=REQUIRED_COLUMNS)
+except (pd.errors.ParserError, ValueError) as error:
     st.error("The tool catalog could not be loaded. Check ai_tools.csv and try again.")
     st.caption(str(error))
     st.stop()
@@ -1081,4 +1086,3 @@ st.caption(
     f"VipervisionAI, by The Vipers. Prices checked {PRICE_CHECK_DATE}. "
     "The prototype can continue improving after the video submission."
 )
-
