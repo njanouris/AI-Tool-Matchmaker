@@ -10,6 +10,7 @@
     --accent-color-blue: #49B8D0;
     --accent-color-yellow: #D9A441;
     --card-color-gray: #53635B;
+    --border-color-dark-green: #1F4D2E;
     --cream-color: #F5EFE0;
     --cream-color-dark: #E6D8BC;
     --border-color: #39FF88;
@@ -292,6 +293,7 @@ div[class*="st-key-explore_heading"] h3 {
 /*Gray boxes for the three explore cards*/
 div[class*="st-key-explore_card"] {
     background-color: var(--card-color-gray);
+    border: 3px solid var(--border-color-dark-green);
     border-radius: 12px;
     padding: 20px;
     height: 100%;
@@ -304,6 +306,15 @@ div[class*="st-key-explore_card"] [data-testid="stCaptionContainer"],
 div[class*="st-key-explore_card"] [data-testid="stMetricLabel"],
 div[class*="st-key-explore_card"] [data-testid="stMetricValue"] {
     color: var(--text-color-white);
+}
+
+/*Card titles centered with a straight blue line under them (80% of the box width)*/
+div[class*="st-key-explore_card"] [data-testid="stMarkdownContainer"] h4 {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 10px auto;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-color-blue);
 }
 
 /*Keeps the three boxes the same height*/
