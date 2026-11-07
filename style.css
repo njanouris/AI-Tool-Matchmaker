@@ -56,11 +56,13 @@
     margin: 60px auto 40px auto;
 }
 
-/*VipervisionAI title in the header box*/
+/*VipervisionAI title with a wavy yellow line under the whole word*/
 [data-testid="stMarkdownContainer"] .top-text h1 {
     color: var(--accent-color-neon-green);
     font-size: 4rem;
-    text-decoration: none;
+    text-decoration: underline wavy var(--accent-color-yellow);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 14px;
     padding-bottom: 20px;
 }
 
