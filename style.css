@@ -214,6 +214,18 @@ div[class*="st-key-vee_intro"] li {
     color: var(--text-color-white);
 }
 
+/*Vee's "Hi, I am Vee!" chat bubble in gold*/
+div[class*="st-key-vee_intro"] [data-testid="stChatMessage"] {
+    background-color: var(--accent-color-yellow);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+/*Dark text inside the gold bubble so it stays readable*/
+div[class*="st-key-vee_intro"] [data-testid="stChatMessage"] p {
+    color: var(--text-color-dark);
+}
+
 /*Start the five questions button inside Vee's box*/
 div[class*="st-key-vee_intro"] .stLinkButton a,
 div[class*="st-key-vee_intro"] .stLinkButton a p {
@@ -241,7 +253,7 @@ div[class*="st-key-vee_image"] img {
 
 /*Moves Vee down so her box reads like a speech bubble above her*/
 div[class*="st-key-vee_image"] {
-    margin-top: 70px;
+    margin-top: 170px;
 }
 
 /*Centers Vee's picture and the Hi, I am Vee box on the page,
