@@ -213,7 +213,22 @@ div[class*="st-key-vee_image"] img {
     border: 5px solid var(--navbar-color);
 }
 
-/*30px of space between Vee's picture and the Hi, I am Vee box*/
+/*Centers Vee's picture and the Hi, I am Vee box on the page,
+  with 30px of space between them*/
 div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) {
     gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Fixed width for Vee's picture column*/
+div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[data-testid="stColumn"]:first-child {
+    flex: 0 0 280px;
+    width: 280px;
+}
+
+/*Vee's box column only as wide as the box (up to 600px)*/
+div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[data-testid="stColumn"]:last-child {
+    flex: 0 1 600px;
+    width: auto;
 }
