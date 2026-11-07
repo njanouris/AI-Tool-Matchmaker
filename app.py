@@ -507,13 +507,15 @@ st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
 vee_col, greet_col = st.columns([1, 2])
 with vee_col:
-    if VEE_FILE.exists():
-        try:
-            st.image(str(VEE_FILE), width="stretch")
-        except Exception:
-            st.image(str(VEE_FILE), use_container_width=True)
-    else:
-        st.markdown("#### Vee, your guide")
+    # Container key lets style.css add Vee's border
+    with st.container(key="vee_image"):
+        if VEE_FILE.exists():
+            try:
+                st.image(str(VEE_FILE), width="stretch")
+            except Exception:
+                st.image(str(VEE_FILE), use_container_width=True)
+        else:
+            st.markdown("#### Vee, your guide")
 with greet_col:
     # Dark blue box with a green border around Vee's introduction
     with st.container(key="vee_intro"):
