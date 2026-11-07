@@ -5,6 +5,7 @@
     --text-color-white: #FFFFFF;
     --text-color-black: #000000;
     --accent-color-neon-green: #39FF88;
+    --accent-color-grass-green: #2E7D32;
     --accent-color-blue: #00B4D8;
     --accent-color-dark-blue: #003366;
     --header-color-dark-blue: #0B1E4B;
@@ -73,7 +74,7 @@
 
 /*VipervisionAI name on the far left of the nav bar*/
 .nav-logo {
-    color: var(--accent-color-neon-green);
+    color: var(--accent-color-grass-green);
     background-color: var(--cream-color-dark);
     font-size: 1.5rem;
     font-weight: bold;
