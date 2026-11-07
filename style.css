@@ -1,33 +1,18 @@
 /*Global color variables*/
 :root {
-    /*Main backgrounds*/
     --background-color: #0D191F;
     --navbar-color: #0A1410;
     --header-color: #102A43;
-
-    /*Main text*/
     --text-color-white: #FFFFFF;
     --text-color-light: #E8F5E9;
     --text-color-dark: #17231F;
-
-    /*Primary brand color*/
     --accent-color-neon-green: #39FF88;
-
-    /*Secondary accent*/
     --accent-color-blue: #49B8D0;
-
-    /*Warm accent (use sparingly)*/
     --accent-color-yellow: #D9A441;
-
-    /*Light surfaces*/
     --cream-color: #F5EFE0;
     --cream-color-dark: #E6D8BC;
-
-    /*Borders*/
     --border-color: #39FF88;
     --border-color-soft: #8FB7A0;
-
-    /*Optional earthy accent*/
     --brown-color: #5C4033;
 }
 
@@ -287,4 +272,35 @@ div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[d
 div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[data-testid="stColumn"]:last-child {
     flex: 0 1 600px;
     width: auto;
+}
+
+/*Animation: gold blocks fade in*/
+@keyframes gold-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*Each gold block fades in one after another*/
+div[class*="st-key-vee_intro"] [data-testid="stChatMessage"] {
+    animation: gold-fade-in 0.6s ease-out 0.2s both;
+}
+
+div[class*="st-key-vee_intro"] div[class*="st-key-vee_gold_answer"] {
+    animation: gold-fade-in 0.6s ease-out 0.6s both;
+}
+
+div[class*="st-key-vee_intro"] div[class*="st-key-vee_gold_how"] {
+    animation: gold-fade-in 0.6s ease-out 1s both;
+}
+
+/*Turns the animation off for visitors who set their device to reduce motion*/
+@media (prefers-reduced-motion: reduce) {
+    div[class*="st-key-vee_intro"] [data-testid="stChatMessage"],
+    div[class*="st-key-vee_intro"] div[class*="st-key-vee_gold"] {
+        animation: none;
+    }
 }
