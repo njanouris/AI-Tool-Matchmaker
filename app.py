@@ -1,134 +1,159 @@
-import streamlit as st
-import pandas as pd
+/*Global color variables*/
+:root {
+    --background-color: #616569;
+    --text-color-light-green: #E8F5E9;
+    --text-color-white: #FFFFFF;
+    --accent-color-neon-green: #39FF88;
+    --accent-color-blue: #00B4D8;
+    --accent-color-dark-blue: #003366;
+    --navbar-color: #0A1410;
+    --border-color: #39FF88;
+    --border-color-backup: #6B4423;
+    --cream-color: #F5EFE0;
+    --brown-color: #5C4033;
+}
 
-tools = pd.read_excel("ai_tools.xlsx")
+/*Sets the background color of the whole website*/
+.stApp {
+    background-color: var(--background-color);
+}
 
-# CSS
-def load_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+/*Keeps section titles from hiding under the nav bar when a nav link jumps to them*/
+.stApp h1,
+.stApp h2,
+.stApp h3,
+#top {
+    scroll-margin-top: 100px;
+}
 
-load_css("style.css")
+/*Helps to contain the main part/title of the website */
+.top-text {
+    border: 5px dashed var(--accent-color-neon-green);
+    border-radius: 10px;
+    background:
+        linear-gradient(rgba(11, 19, 43, 0.6), rgba(11, 19, 43, 0.6)),
+        url("https://img.magnific.com/free-vector/technology-circuit-lines-diagram-futuristic_1017-29746.jpg") var(--navbar-color);
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color-white);
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
 
-# Work in Progress Nav Bar (we will need three pages or we can delete this)
-st.markdown("""
-<div class="navbar">
-    <div class="nav-logo">ViperVisionAI: AI Tool Matchmaker</div>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">About the Website</a>
-        <a href="#">About the Creators</a>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+.top-text h1 {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: var(--accent-color-neon-green);
+}
 
-# AI Tool Matchmaker header text
-st.markdown("""
-<div class="top-text">
-    <h1>ViperVisionAI</h1>
-    <p>Find the right AI tools for your small business.</p>
-    <p>Smarter Tools. Clearer Decisions.</p>
-</div>
-""", unsafe_allow_html=True)
+/*Navigation Bar that is at the top of the website*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1570454618940-165d5cc494f3?w=1600&q=60") var(--border-color-backup);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid var(--cream-color);
+}
 
-# Division between header and first question
-st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
+/*VipervisionAI name on the far left of the nav bar*/
+.nav-logo {
+    color: var(--accent-color-neon-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-# First questionnaire question
-# Ask what type of business the user operates
-with st.container(key="question_card_business"):
-    business_type = st.selectbox(
-        "What type of business do you operate?",
-        [
-            "Restaurant / Cafe",
-            "Retail Store",
-            "Landscaping",
-            "HVAC / Home Services",
-            "Professional Services",
-            "Other"
-        ],
-        index=None,
-        placeholder="Select your business type..."
-    )
-    if business_type:
-        st.write("You selected:", business_type)
+/*Groups the links together on the right side of the nav bar*/
+.nav-links {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
 
-with st.container(key="question_card_challenge"):
-    challenge = st.selectbox(
-        "What is your biggest business challenge?",
-        [
-            "Marketing and Advertising",
-            "Customer Service",
-            "Employee Scheduling",
-            "Accounting and Bookkeeping",
-            "Inventory Management",
-            "Administrative Tasks"
-        ],
-        index=None,
-        placeholder="Select your biggest challenge..."
-    )
-    if challenge:
-        st.write("You selected:", challenge)
+.navbar a {
+    color: var(--text-color-white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
 
-#Asking for the users Budget
-with st.container(key="question_card_budget"):
-    budget = st.selectbox(
-        "What is your budget for AI tools?",
-        [
-            "Under $100/month",
-            "$100-$500/month",
-            "$500-$1,000/month",
-            "Over $1,000/month"
-        ],
-        index=None,
-        placeholder="Select your budget..."
-    )
-    if budget:
-        st.write("You selected:", budget)
+.navbar a:hover {
+    background-color: var(--accent-color-neon-green);
+    color: var(--navbar-color);
+}
 
-#Number of employees
-with st.container(key="question_card_employees"):
-    num_employees = st.slider("How many employees do you have?", 1, 100, 5)
-    st.write("You selected:", num_employees)
+/*Horizontal line between the header box and the questions*/
+[data-testid="stMarkdownContainer"] hr.section-divider {
+    border: none;
+    border-top: 4px solid var(--accent-color-dark-blue);
+    margin: 0 0 40px 0;
+}
 
-with st.container(key="question_card_tech"):
-    tech_comfort = st.slider("How comfortable are you with technology?", 1, 10, 1)
-    st.write("You selected:", tech_comfort)
+/*Cards that hold each question*/
+div[class*="st-key-question_card"] {
+    background-color: var(--cream-color);
+    border: 3px dashed var(--brown-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-if st.button("Find My AI Tools"):
+/*Dark text inside the cards*/
+div[class*="st-key-question_card"] p {
+    color: var(--navbar-color);
+}
 
-    # Validation: make sure every dropdown has an answer
-    missing = []
-    if business_type is None:
-        missing.append("business type")
-    if challenge is None:
-        missing.append("biggest challenge")
-    if budget is None:
-        missing.append("budget")
+/*Question titles: centered, bold, and underlined*/
+div[class*="st-key-question_card"] [data-testid="stMarkdownContainer"] p {
+    text-align: center;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin-bottom: 15px;
+}
 
-    if missing:
-        st.error("Please select your " + ", ".join(missing) + " before continuing.")
-        st.stop()
+/*Dropdown boxes in brown to match the dashed border*/
+div[class*="st-key-question_card"] div[data-baseweb="select"] > div {
+    background-color: var(--brown-color);
+    border: 2px solid var(--brown-color);
+    border-radius: 8px;
+}
 
-    st.write(
-        f"Currently looking for the best AI tools for your "
-        f"{business_type} business based on your responses. "
-        f"Please wait while we analyze your inputs and provide recommendations."
-    )
+/*Cream text and arrow inside the brown dropdowns*/
+div[class*="st-key-question_card"] div[data-baseweb="select"] * {
+    color: var(--cream-color);
+}
 
-#helps with results
-    matches = tools[
-        (tools['challenge'] == challenge) &
-        (tools['business_type'] == business_type)
-    ]
+/*Buttons across the site (replaces the old gold button style)*/
+.stButton button,
+.stFormSubmitButton button,
+.stDownloadButton button,
+.stLinkButton a {
+    background-color: var(--accent-color-neon-green);
+    color: var(--navbar-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    min-height: 48px;
+}
 
-    st.subheader("Your AI Tool Recommendations")
-
-    if matches.empty:
-        st.warning("No matching tools found. Try another selection.")
-    else:
-        for index, tool in matches.iterrows():
-            st.write(f"### {tool['tool_name']}")
-            st.write(f"Monthly Cost: ${tool['monthly_cost']}")
-            st.write(f"Pros: {tool['pros']}")
-            st.write(f"Cons: {tool['cons']}")
+.stButton button:hover,
+.stFormSubmitButton button:hover,
+.stDownloadButton button:hover,
+.stLinkButton a:hover {
+    background-color: var(--navbar-color);
+    color: var(--accent-color-neon-green);
+}
