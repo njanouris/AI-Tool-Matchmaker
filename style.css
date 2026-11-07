@@ -9,7 +9,7 @@
     --accent-color-neon-green: #39FF88;
     --accent-color-blue: #49B8D0;
     --accent-color-yellow: #D9A441;
-    --accent-color-chartreuse: #A8B83A;
+    --card-color-gray: #53635B;
     --cream-color: #F5EFE0;
     --cream-color-dark: #E6D8BC;
     --border-color: #39FF88;
@@ -289,24 +289,24 @@ div[class*="st-key-explore_heading"] h3 {
     color: var(--accent-color-neon-green);
 }
 
-/*Chartreuse boxes for the three explore cards and the three stats*/
+/*Gray boxes for the three explore cards*/
 div[class*="st-key-explore_card"] {
-    background-color: var(--accent-color-chartreuse);
+    background-color: var(--card-color-gray);
     border-radius: 12px;
     padding: 20px;
     height: 100%;
 }
 
-/*Dark text inside the chartreuse boxes so it stays readable*/
+/*Light text inside the gray boxes so it stays readable*/
 div[class*="st-key-explore_card"] h4,
 div[class*="st-key-explore_card"] p,
 div[class*="st-key-explore_card"] [data-testid="stCaptionContainer"],
 div[class*="st-key-explore_card"] [data-testid="stMetricLabel"],
 div[class*="st-key-explore_card"] [data-testid="stMetricValue"] {
-    color: var(--text-color-dark);
+    color: var(--text-color-white);
 }
 
-/*Keeps each row of boxes the same height*/
+/*Keeps the three boxes the same height*/
 div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-explore_card"]) {
     align-items: stretch;
 }
