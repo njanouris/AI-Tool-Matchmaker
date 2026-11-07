@@ -299,16 +299,16 @@ div[class*="st-key-explore_heading"] h3 {
     text-align: center;
 }
 
-/*Gray boxes for the three explore cards*/
+/*Dark blue boxes for the three explore cards*/
 div[class*="st-key-explore_card"] {
-    background-color: var(--card-color-gray);
-    border: 3px solid var(--border-color-dark-green);
+    background-color: var(--header-color);
+    border: 3px solid var(--accent-color-neon-green);
     border-radius: 12px;
     padding: 20px;
     height: 100%;
 }
 
-/*Light text inside the gray boxes so it stays readable*/
+/*Light text inside the dark blue boxes so it stays readable*/
 div[class*="st-key-explore_card"] h4,
 div[class*="st-key-explore_card"] p,
 div[class*="st-key-explore_card"] [data-testid="stCaptionContainer"],
@@ -317,13 +317,18 @@ div[class*="st-key-explore_card"] [data-testid="stMetricValue"] {
     color: var(--text-color-white);
 }
 
-/*Card titles centered with a straight dark blue line under them (80% of the box width)*/
+/*Card titles centered with a straight light line under them (80% of the box width)*/
 div[class*="st-key-explore_card"] [data-testid="stMarkdownContainer"] h4 {
     text-align: center;
     width: 80%;
     margin: 0 auto 10px auto;
     padding-bottom: 10px;
-    border-bottom: 3px solid var(--header-color);
+    border-bottom: 3px solid var(--text-color-light);
+}
+
+/*Explore buttons: white outline*/
+div[class*="st-key-explore_card"] .stButton button {
+    border: 2px solid var(--text-color-white);
 }
 
 /*Explore buttons: dark text so it shows on the neon green*/
