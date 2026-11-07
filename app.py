@@ -557,6 +557,7 @@ with card1:
         if st.button("Explore customer questions", key="explore_customer", use_container_width=True):
             st.session_state["explore_job"] = "Customer Questions"
             st.session_state["quiz_job_select"] = "Customer Questions"
+        st.metric("Real tools in the catalog", len(tools))
 with card2:
     with st.container(key="explore_card_marketing"):
         st.markdown("#### Marketing")
@@ -565,6 +566,7 @@ with card2:
         if st.button("Explore marketing", key="explore_marketing", use_container_width=True):
             st.session_state["explore_job"] = "Marketing"
             st.session_state["quiz_job_select"] = "Marketing"
+        st.metric("Jobs covered", tools["challenge"].nunique())
 with card3:
     with st.container(key="explore_card_bookings"):
         st.markdown("#### Bookings and operations")
@@ -573,16 +575,6 @@ with card3:
         if st.button("Explore bookings", key="explore_bookings", use_container_width=True):
             st.session_state["explore_job"] = "Bookings"
             st.session_state["quiz_job_select"] = "Bookings"
-
-stat1, stat2, stat3 = st.columns(3)
-with stat1:
-    with st.container(key="explore_card_stat_tools"):
-        st.metric("Real tools in the catalog", len(tools))
-with stat2:
-    with st.container(key="explore_card_stat_jobs"):
-        st.metric("Jobs covered", tools["challenge"].nunique())
-with stat3:
-    with st.container(key="explore_card_stat_prices"):
         st.metric("Prices checked", PRICE_CHECK_DATE)
 
 # Recommendation questionnaire
