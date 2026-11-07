@@ -13,6 +13,7 @@
     --border-color: #39FF88;
     --border-color-backup: #6B4423;
     --cream-color: #F5EFE0;
+    --cream-color-dark: #E6D8BC;
     --brown-color: #5C4033;
 }
 
@@ -35,10 +36,10 @@
     border-radius: 10px;
     background-color: var(--header-color-dark-blue);
     color: var(--text-color-white);
-    padding: 10px 20px;
+    padding: 20px;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 60px auto 40px auto;
 }
 
 /*VipervisionAI title with a wavy yellow line under the whole word*/
@@ -48,13 +49,7 @@
     text-decoration: underline wavy var(--accent-color-yellow);
     text-decoration-thickness: 3px;
     text-underline-offset: 14px;
-    padding: 0 0 18px 0;
-    margin: 0;
-}
-
-/*Tagline under the title*/
-[data-testid="stMarkdownContainer"] .top-text p {
-    margin: 0;
+    padding-bottom: 20px;
 }
 
 /*Navigation Bar that is at the top of the website*/
@@ -72,13 +67,14 @@
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
         var(--navbar-image) var(--border-color-backup);
     background-repeat: repeat;
+    border-top: 5px solid var(--cream-color-dark);
     border-bottom: 5px solid var(--cream-color);
 }
 
 /*VipervisionAI name on the far left of the nav bar*/
 .nav-logo {
-    color: var(--header-color-dark-blue);
-    background-color: var(--cream-color);
+    color: var(--accent-color-neon-green);
+    background-color: var(--cream-color-dark);
     font-size: 1.5rem;
     font-weight: bold;
     padding: 6px 16px;
@@ -177,6 +173,7 @@ div[class*="st-key-vee_intro"] {
     padding: 12px 20px;
     height: fit-content;
     align-self: flex-start;
+    max-width: 600px;
 }
 
 /*White text inside Vee's box so it shows on dark blue*/
