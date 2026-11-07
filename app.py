@@ -516,21 +516,24 @@ with vee_col:
     else:
         st.markdown("#### Vee, your guide")
 with greet_col:
-    with st.chat_message("assistant", avatar=vee_avatar()):
+    # Dark blue box with a green border around Vee's introduction
+    with st.container(key="vee_intro"):
+        with st.chat_message("assistant", avatar=vee_avatar()):
+            st.write(
+                "Hi, I am Vee! Tell me your top business goal, "
+                "and I will help you compare up to three real AI tools."
+            )
         st.write(
-            "Hi, I am Vee! Tell me your top business goal, "
-            "and I will help you compare up to three real AI tools."
+            "Answer five questions to see a ranked shortlist with a clear score "
+            "breakdown, real catalog prices, and practical next steps."
         )
-    st.write(
-        "Answer five questions to see a ranked shortlist with a clear score "
-        "breakdown, real catalog prices, and practical next steps."
-    )
-    st.markdown(
-        "**How it works:** 1. Answer five questions. 2. Read your top three tools "
-        "and why they matched. 3. Use the first week checklist, compare tools, "
-        "and test the ROI calculator."
-    )
-    st.link_button("Start the five questions", "#find-my-tools", type="primary")
+        st.markdown(
+            "**How it works:**\n\n"
+            "1. Answer five questions.\n"
+            "2. Read your top three tools and why they matched.\n"
+            "3. Use the first week checklist, compare tools, and test the ROI calculator."
+        )
+        st.link_button("Start the five questions", "#find-my-tools", type="primary")
 
 st.subheader("What Vee can help you explore")
 card1, card2, card3 = st.columns(3)
