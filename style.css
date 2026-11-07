@@ -6,6 +6,8 @@
     --accent-color-neon-green: #39FF88;
     --accent-color-blue: #00B4D8;
     --accent-color-dark-blue: #003366;
+    --header-color-dark-blue: #0B1E4B;
+    --accent-color-yellow: #D9A441;
     --navbar-color: #0A1410;
     --border-color: #39FF88;
     --border-color-backup: #6B4423;
@@ -30,11 +32,7 @@
 .top-text {
     border: 5px dashed var(--accent-color-neon-green);
     border-radius: 10px;
-    background:
-        linear-gradient(rgba(11, 19, 43, 0.6), rgba(11, 19, 43, 0.6)),
-        url("https://img.magnific.com/free-vector/technology-circuit-lines-diagram-futuristic_1017-29746.jpg") var(--navbar-color);
-    background-size: cover;
-    background-position: center;
+    background-color: var(--header-color-dark-blue);
     color: var(--text-color-white);
     padding: 20px;
     text-align: center;
@@ -43,9 +41,15 @@
 }
 
 .top-text h1 {
-    text-decoration: underline;
-    text-underline-offset: 2px;
     color: var(--accent-color-neon-green);
+}
+
+/*Short yellow line that separates the title and the tagline*/
+[data-testid="stMarkdownContainer"] hr.title-divider {
+    width: 80px;
+    border: none;
+    border-top: 4px solid var(--accent-color-yellow);
+    margin: 12px auto;
 }
 
 /*Navigation Bar that is at the top of the website*/
