@@ -10,13 +10,13 @@
     --accent-color-blue: #49B8D0;
     --accent-color-yellow: #D9A441;
     --card-color-gray: #53635B;
-    --tan-color: #C8A978;
     --border-color-dark-green: #1F4D2E;
     --cream-color: #F5EFE0;
     --cream-color-dark: #E6D8BC;
     --border-color: #39FF88;
     --border-color-soft: #8FB7A0;
     --brown-color: #5C4033;
+    --brown-color-dark: #432910;
 }
 
 /*Sets the background color of the whole website*/
@@ -277,11 +277,25 @@ div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[d
     width: auto;
 }
 
-/*Tan background around the whole explore section*/
+/*Brown background around the whole explore section*/
 div[class*="st-key-explore_section"] {
-    background-color: var(--tan-color);
+    background-color: var(--brown-color-dark);
     border-radius: 16px;
     padding: 25px;
+}
+
+/*Brown box around the whole Find my tools section*/
+div[class*="st-key-find_tools_section"] {
+    background-color: var(--brown-color);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+/*Light heading, intro text, and optional systems label in the Find my tools box*/
+div[class*="st-key-find_tools_section"] h2,
+div[class*="st-key-find_tools_section"] > [data-testid="stElementContainer"] p,
+div[class*="st-key-find_tools_section"] [data-testid="stTextInput"] label p {
+    color: var(--text-color-white);
 }
 
 /*"What Vee can help you explore" heading in its own box*/
