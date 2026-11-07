@@ -9,6 +9,7 @@
     --accent-color-neon-green: #39FF88;
     --accent-color-blue: #49B8D0;
     --accent-color-yellow: #D9A441;
+    --accent-color-chartreuse: #A8B83A;
     --cream-color: #F5EFE0;
     --cream-color-dark: #E6D8BC;
     --border-color: #39FF88;
@@ -274,6 +275,42 @@ div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[d
     width: auto;
 }
 
+/*"What Vee can help you explore" heading in its own box*/
+div[class*="st-key-explore_heading"] {
+    background-color: var(--header-color);
+    border: 2px solid var(--accent-color-neon-green);
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div[class*="st-key-explore_heading"] h3 {
+    color: var(--accent-color-neon-green);
+}
+
+/*Chartreuse boxes for the three explore cards and the three stats*/
+div[class*="st-key-explore_card"] {
+    background-color: var(--accent-color-chartreuse);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+
+/*Dark text inside the chartreuse boxes so it stays readable*/
+div[class*="st-key-explore_card"] h4,
+div[class*="st-key-explore_card"] p,
+div[class*="st-key-explore_card"] [data-testid="stCaptionContainer"],
+div[class*="st-key-explore_card"] [data-testid="stMetricLabel"],
+div[class*="st-key-explore_card"] [data-testid="stMetricValue"] {
+    color: var(--text-color-dark);
+}
+
+/*Keeps each row of boxes the same height*/
+div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-explore_card"]) {
+    align-items: stretch;
+}
+
 /*Animation: gold blocks fade in*/
 @keyframes gold-fade-in {
     from {
@@ -286,15 +323,15 @@ div[data-testid="stHorizontalBlock"]:has(div[class*="st-key-vee_image"]) > div[d
 
 /*Each gold block fades in one after another*/
 div[class*="st-key-vee_intro"] [data-testid="stChatMessage"] {
-    animation: gold-fade-in 0.6s ease-out 0.2s both;
+    animation: gold-fade-in 2s ease-out 0.2s both;
 }
 
 div[class*="st-key-vee_intro"] div[class*="st-key-vee_gold_answer"] {
-    animation: gold-fade-in 0.6s ease-out 0.6s both;
+    animation: gold-fade-in 2s ease-out 2.2s both;
 }
 
 div[class*="st-key-vee_intro"] div[class*="st-key-vee_gold_how"] {
-    animation: gold-fade-in 0.6s ease-out 1s both;
+    animation: gold-fade-in 2s ease-out 4.2s both;
 }
 
 /*Turns the animation off for visitors who set their device to reduce motion*/
