@@ -3,6 +3,7 @@
     --background-color: #616569;
     --text-color-light-green: #E8F5E9;
     --text-color-white: #FFFFFF;
+    --text-color-black: #000000;
     --accent-color-neon-green: #39FF88;
     --accent-color-blue: #00B4D8;
     --accent-color-dark-blue: #003366;
@@ -40,16 +41,14 @@
     margin-bottom: 40px;
 }
 
-.top-text h1 {
+/*VipervisionAI title with a wavy yellow line under the whole word*/
+[data-testid="stMarkdownContainer"] .top-text h1 {
     color: var(--accent-color-neon-green);
-}
-
-/*Short yellow line that separates the title and the tagline*/
-[data-testid="stMarkdownContainer"] hr.title-divider {
-    width: 80px;
-    border: none;
-    border-top: 4px solid var(--accent-color-yellow);
-    margin: 12px auto;
+    font-size: 4rem;
+    text-decoration: underline wavy var(--accent-color-yellow);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 14px;
+    padding-bottom: 20px;
 }
 
 /*Navigation Bar that is at the top of the website*/
@@ -173,6 +172,21 @@ div[class*="st-key-vee_intro"] {
 div[class*="st-key-vee_intro"] p,
 div[class*="st-key-vee_intro"] li {
     color: var(--text-color-white);
+}
+
+/*Start the five questions button inside Vee's box*/
+div[class*="st-key-vee_intro"] .stLinkButton a,
+div[class*="st-key-vee_intro"] .stLinkButton a p {
+    color: var(--text-color-black);
+}
+
+div[class*="st-key-vee_intro"] .stLinkButton a {
+    border: 2px solid var(--text-color-white);
+}
+
+/*Hover: white background so the black text stays readable*/
+div[class*="st-key-vee_intro"] .stLinkButton a:hover {
+    background-color: var(--text-color-white);
 }
 
 /*Snakeskin image for the nav bar background.
